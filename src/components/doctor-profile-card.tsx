@@ -48,7 +48,7 @@ function ProfileSelectors(){
         <div className="flex w-full gap-3 flex-col md:flex-row">
 
         <Select >
-            <SelectTrigger className="w-full bg-[#F7F8F9]">
+            <SelectTrigger className="flex-1 bg-[#F7F8F9] rounded-md border-[#0171DE0D] ">
                 <SelectValue placeholder="Language"/>
             </SelectTrigger>
             <SelectContent>
@@ -58,7 +58,7 @@ function ProfileSelectors(){
 
         </Select>
         <Select >
-            <SelectTrigger className="w-full bg-[#F7F8F9]">
+            <SelectTrigger className="flex-1 bg-[#F7F8F9]">
                 <SelectValue placeholder="Gender"/>
             </SelectTrigger>
             <SelectContent>
@@ -87,7 +87,7 @@ function TimeSlots(){
             <div className="w-full flex items-center justify-center">
                 <SheetStepper>
 
-                <button className="underline font-bold text-black-primary">
+                <button className="underline font-bold text-black-primary text-[10px]">
                     See more timeslots
                 </button>
                 </SheetStepper>
@@ -100,8 +100,8 @@ function TimeSlots(){
 function SingleTimeSlot(){
     return (
     <SheetStepper>
-  <button className="border w-full  flex border-[#B6B6B6] p-3  rounded-md items-center gap-4">
-        <span className="size-[18px] rounded-md bg-[#F7F8F9] flex items-center justify-center">
+  <button className="border w-full  flex border-[#B6B6B6] border-dashed p-3  rounded-md items-center gap-4">
+        <span className="size-[20px] rounded-sm bg-[#F7F8F9] flex items-center justify-center">
             <Clock  className="size-2"/>
         </span>
         <p className="text-[10px] text-[#65758B]">9 Oct 2025</p>

@@ -85,7 +85,7 @@ export default function FilterCardCollection(){
   return (<div className='flex flex-col gap-y-3 md:w-[20%] '>
     <h2 className='text-[#263140] text-xl font-bold'>Filters</h2>
     <FilterCard />
-    <Button>
+    <Button withGradient>
       Apply Filters
     </Button>
     <span  className='text-[#6C7C93] text-xs text-center'>Showing results based on your preferences</span>

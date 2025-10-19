@@ -25,30 +25,37 @@ export default function InfoConfirmation() {
 
 function ConfirmationHeader() {
   return (
-    <div
-      className='p-7 flex gap-3 items-center rounded-lg'
-      style={{
-        background: 'linear-gradient(90deg, rgba(1, 171, 189, 0.06) 0%, rgba(1, 147, 162, 0.06) 158.4%)',
-      }}
+   <div className='p-7 flex gap-3 items-center rounded-lg border border-[#0068d033]' style={{
+        background: "linear-gradient(90deg, rgba(1, 171, 189, 0.06) 0%, rgba(1, 147, 162, 0.06) 158.4%)"
+
+
+    }}
+
+
     >
-      <Avatar className='w-[81px] h-[75px]'>
-        <AvatarFallback className='size-full'>US</AvatarFallback>
-        <AvatarImage src='' />
-      </Avatar>
-      <div>
-        <h3 className='font-bold text-[#22222A] text-[22.1px]'>Altano Clinic</h3>
-        <div className='border-dashed border-[#E0E6EB] border rounded-sm px-2 py-1.5 flex items-center justify-between'>
-          <h4 className='text-[#658D1B] text-xs font-semibold'>Adult</h4>
-          <div className='flex gap-2'>
-            <div className='bg-white h-[20px] w-[40px] rounded-sm flex items-center justify-center'>
-              <p className='text-xs text-black'>$44</p>
+
+        <Avatar className='w-[81px] h-[75px]'>
+            <AvatarFallback className='size-full'>US</AvatarFallback>
+            <AvatarImage src='asdasd' alt="Users " />
+        </Avatar>
+        <div>
+
+            <h3 className='font-bold text-[#22222A] text-[22.1px]'>Altano Clinic</h3>
+            <div className='border-dashed border-[#E0E6EB] border rounded-sm px-2 py-1.5 flex items-center justify-between gap-4'>
+                <h4 className='text-[#658D1B] text-xs font-semibold'>Adult</h4>
+                <div className='flex gap-2'>
+                    <div className='bg-white h-[20px] w-[40px] rounded-sm flex items-center justify-center'>
+                        <p className='text-xs text-black'>$44</p>
+                    </div>
+                    <div className='bg-white h-[20px] w-[40px] rounded-sm flex items-center justify-center'>
+                        <p className='text-xs text-black'>$44</p>
+                    </div>
+                </div>
             </div>
-            <div className='bg-white h-[20px] w-[40px] rounded-sm flex items-center justify-center'>
-              <p className='text-xs text-black'>$44</p>
-            </div>
-          </div>
         </div>
-      </div>
+
+
+
     </div>
   );
 }
@@ -77,7 +84,7 @@ function NavigationButtons() {
   return (
     <>
       <div className='flex items-center gap-2 w-full'>
-        <Button className='flex-1' variant='secondary' onClick={() => setStep('form')}>
+        <Button variant={"secondary"} type='button' className='w-[30%] bg-white border'   onClick={() => setStep('form')}>
           Back
         </Button>
         <Button className='flex-1' onClick={()=>{

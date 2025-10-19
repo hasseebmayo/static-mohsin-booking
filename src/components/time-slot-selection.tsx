@@ -11,25 +11,45 @@ export default function TimeSlotSelection() {
                 Select Time Slot
             </h3>
             <ConfirmationHeader />
-            <Tabs defaultValue='monday'>
-                <TabsList>
-                    <TabsTrigger value='monday'>
-                        Monday
+            <Tabs defaultValue='all' className=''>
+                <TabsList className='flex w-full'
+                 style={{
+        background: "linear-gradient(90deg, rgba(1, 171, 189, 0.06) 0%, rgba(1, 147, 162, 0.06) 158.4%)"
+
+
+    }}
+                >
+                    <TabsTrigger value='all' className='flex-1 w-full'>
+                        All
                     </TabsTrigger>
-                    <TabsTrigger value='tuesday'>
-                        Tuesday
+                    <TabsTrigger value='morning' className='flex-1'>
+                        Morning
+                    </TabsTrigger>
+                    <TabsTrigger value='afternoon' className='flex-1'>
+                        Afternoon
+                    </TabsTrigger>
+                    <TabsTrigger value='evening' className='flex-1'>
+                        Evening
                     </TabsTrigger>
                 </TabsList>
-                <TabsContent value='monday'>
+                <TabsContent value='all'>
                     <h2 className='text-base text-[#22222A] font-bold'>Available Slots - 9 Oct 2025</h2>
                     <TimeSlots />
                 </TabsContent>
-                <TabsContent value='tuesday'>
+                <TabsContent value='morning'>
+                    <h2 className='text-base text-[#22222A] font-bold'>Available Slots - 9 Oct 2025</h2>
+                    <TimeSlots />
+                </TabsContent>
+                <TabsContent value='evening'>
+                    <h2 className='text-base text-[#22222A] font-bold'>Available Slots - 9 Oct 2025</h2>
+                    <TimeSlots />
+                </TabsContent>
+                <TabsContent value='afternoon'>
                     <h2 className='text-base text-[#22222A] font-bold'>Available Slots - 9 Oct 2025</h2>
                     <TimeSlots />
                 </TabsContent>
             </Tabs>
-            <Button className='w-full' onClick={()=>{
+            <Button className='w-full' withGradient onClick={()=>{
                 console.log("clicked")
                 setStep("form")
             }}>Continue</Button>
@@ -37,9 +57,9 @@ export default function TimeSlotSelection() {
     )
 }
 
-
 function ConfirmationHeader() {
-    return (<div className='p-7 flex gap-3 items-center rounded-lg' style={{
+    return (
+    <div className='p-7 flex gap-3 items-center rounded-lg border border-[rgba(0, 104, 208, 0.2)]' style={{
         background: "linear-gradient(90deg, rgba(1, 171, 189, 0.06) 0%, rgba(1, 147, 162, 0.06) 158.4%)"
 
 
@@ -70,7 +90,8 @@ function ConfirmationHeader() {
 
 
 
-    </div>)
+    </div>
+    )
 }
 
 function SingleTimeBox() {

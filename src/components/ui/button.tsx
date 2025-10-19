@@ -41,15 +41,29 @@ function Button({
   variant,
   size,
   asChild = false,
+  withGradient,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
+    asChild?: boolean,
+    withGradient?:boolean
   }) {
   const Comp = asChild ? Slot : "button"
 
+
+
   return (
     <Comp
+    style={{...props.style,
+
+      ...(withGradient ? {
+        background:"linear-gradient(90deg, #007FF2 54.06%, #013688 283.03%)",
+        boxShadow: "0px 4px 6px -4px rgba(0, 0, 0, 0.1)"
+
+
+
+      } :{})
+    }}
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}

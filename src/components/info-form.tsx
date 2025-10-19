@@ -45,6 +45,8 @@ export default function InfoForm() {
     },
   })
 
+
+
   function onSubmit(data: FormType) {
     console.log(data)
   }
@@ -58,9 +60,13 @@ export default function InfoForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="bg-[#F0FAFB] p-7 rounded-lg flex flex-col gap-5"
+        className='space-y-6'
+
       >
-        <>
+        <div  className="bg-[#F0FAFB] p-7 rounded-lg flex flex-col gap-5 border border-[rgba(0, 104, 208, 0.2)]"
+        style={{
+          boxShadow:"0px 10px 15px -3px rgba(0, 0, 0, 0.1)"
+        }}>
           <FormFieldWrapper control={form.control} name="first_name" label="First Name">
             {(field) => (
               <Input {...field} className="bg-white rounded-lg border border-[#E2E6EA]" placeholder="Enter first name" />
@@ -102,10 +108,10 @@ export default function InfoForm() {
               <Input {...field} className="bg-white rounded-lg border border-[#E2E6EA]" placeholder="Enter NHI number (optional)" />
             )}
           </FormFieldWrapper>
-        </>
+        </div>
         <div className='flex gap-2 w-full'>
 
-        <Button variant={"secondary"} type='button' className='flex-1' onClick={()=>{
+        <Button variant={"secondary"} type='button' className='w-[30%] bg-white border' onClick={()=>{
             setStep("time-slot")
         }}>
             Back
@@ -157,7 +163,7 @@ function FormFieldWrapper<T extends FieldValues>({
       render={({ field }) => (
         <FormItem className={cn(formItemClassName, "flex flex-col gap-2")}>
           {label && (
-            <FormLabel className={cn("text-black-primary text-[14px] font-medium", labelClassName)}>
+            <FormLabel className={cn("text-black-primary text-[19px] font-semibold", labelClassName)}>
               {label}
             </FormLabel>
           )}

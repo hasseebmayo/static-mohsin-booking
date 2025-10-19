@@ -11,7 +11,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full ">
       {/* Blue gradient background */}
       <div
         className="w-full px-6 py-3"
@@ -19,7 +19,7 @@ export function Header() {
           background: "linear-gradient(90deg, #007FF2 0%, #007FF2 63.36%, #013688 158.4%)",
         }}
       >
-        <div className="flex items-center justify-between gap-4 max-w-[1920px] mx-auto">
+        <div className="flex items-center justify-between gap-4  max-w-[1380px] mx-auto">
           {/* Logo Section */}
           <div className="flex items-center gap-3 flex-shrink-0">
             <img
