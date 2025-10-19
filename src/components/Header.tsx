@@ -23,7 +23,7 @@ export function Header() {
           {/* Logo Section */}
           <div className="flex items-center gap-3 flex-shrink-0">
             <img
-              src="/src/assets/logo.png"
+              src="/logo.png"
               alt="Octans Care Logo"
               className="h-10 w-auto"
             />
