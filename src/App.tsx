@@ -1,6 +1,5 @@
 import FilterCard from "@/components/filter-card"
 import { Header } from "@/components/Header"
-import SheetStepper from "@/components/sheet-stepper"
 import DoctorCollection from "@/doctor-collection"
 
 function App() {
@@ -12,7 +11,7 @@ function App() {
      <FilterCard />
 <DoctorCollection />
 </main>
-<SheetStepper />
+
 
     </div>
   )

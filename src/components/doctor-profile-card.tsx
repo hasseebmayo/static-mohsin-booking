@@ -1,3 +1,4 @@
+import SheetStepper from "@/components/sheet-stepper";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select,SelectContent,SelectItem,SelectTrigger,SelectValue } from "@/components/ui/select";
@@ -84,9 +85,12 @@ function TimeSlots(){
             <SingleTimeSlot />
             <AvailableTimeSlot />
             <div className="w-full flex items-center justify-center">
+                <SheetStepper>
+
                 <button className="underline font-bold text-black-primary">
                     See more timeslots
                 </button>
+                </SheetStepper>
             </div>
         </div>
     )
@@ -94,7 +98,9 @@ function TimeSlots(){
 
 
 function SingleTimeSlot(){
-    return (<button className="border w-full  flex border-[#B6B6B6] p-3  rounded-md items-center gap-4">
+    return (
+    <SheetStepper>
+  <button className="border w-full  flex border-[#B6B6B6] p-3  rounded-md items-center gap-4">
         <span className="size-[18px] rounded-md bg-[#F7F8F9] flex items-center justify-center">
             <Clock  className="size-2"/>
         </span>
@@ -102,7 +108,9 @@ function SingleTimeSlot(){
         <p className="text-xs font-bold text-black-primary">
             19:00
         </p>
-    </button>)
+    </button>
+    </SheetStepper>
+  )
 }
 
 function AvailableTimeSlot(){

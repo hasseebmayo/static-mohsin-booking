@@ -55,7 +55,7 @@ function StepContent() {
 }
 
 // New component to handle Sheet and onOpenChange
-function SheetContainer() {
+function SheetContainer({children}:{children:ReactNode}) {
     const { setStep,open,setOpen,modalOpen,setModalOpen } = useStepper();
     return (
         <>
@@ -69,8 +69,8 @@ function SheetContainer() {
             }}
             open={open}
         >
-            <SheetTrigger>trigger</SheetTrigger>
-            <SheetContent className="p-7 min-w-[500px] overflow-y-auto">
+            <SheetTrigger asChild>{children}</SheetTrigger>
+            <SheetContent className="p-7 md:min-w-[500px] overflow-y-auto">
                 <StepContent />
             </SheetContent>
         </Sheet>
@@ -80,10 +80,12 @@ function SheetContainer() {
 }
 
 // Main SheetStepper component
-export default function SheetStepper() {
+export default function SheetStepper({children}:{children:ReactNode}) {
     return (
         <Stepper>
-            <SheetContainer />
+            <SheetContainer >
+                {children}
+            </SheetContainer>
         </Stepper>
     );
 }
