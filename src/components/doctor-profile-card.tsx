@@ -6,8 +6,8 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 
 export default function DoctorProfileCard() {
     return (
-        <Card className='border-[#E0E6EB] rounded-md
-    py-0 px-0'>
+        <Card className='border-[#E0E6EB] rounded-[12px]
+    py-0 px-0 shadow-[0px_2px_4px_-2px_#0000001A]'>
             <CardContent className='flex flex-col gap-y-3 p-4'>
                 <ProfileHeader />
                 <ProfileSelectors />
@@ -20,22 +20,25 @@ export default function DoctorProfileCard() {
 
 function ProfileHeader() {
     return (
-        <div className="flex items-center justify-between flex-col md:flex-row w-full gap-4">
-            <Avatar className="size-[60px] rounded-md">
+        <div className="flex items-center  flex-col md:flex-row w-full gap-3">
+            <Avatar className="size-[60px] rounded-md shadow-[0px_2px_4px_-2px_#0000001A,0px_4px_6px_-1px_#0000001A,0px_0px_0px_2px_#658D1B1A]">
                 <AvatarFallback className="size-full rounded-md">
                     US
                 </AvatarFallback>
-                <AvatarImage src="/public/vitesvg" alt="User Profile" />
+                <AvatarImage src="/public/vetzi.svg"  alt="User Profile" />
             </Avatar>
             <div className="flex  justify-between flex-col ">
                 <h3 className="font-bold text-base text-black-primary">Galing Clinic</h3>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center gap-2">
                     <span className="bg-[#F7F8F9] rounded-md text-center p-2
                     text-black-primary text-[9px]">
                         From 45$
                     </span>
-                    <button className="text-primary flex text-[10px] font-medium items-center">
-                        Show Prices <ArrowRight className="ml-2 size-2" />
+                    <button className="text-primary flex items-center justify-center text-[10px] font-medium gap-1">
+                        <span>Show Prices</span>
+                        <div>
+                        <ArrowRight className="size-2" />
+                        </div>
                     </button>
                 </div>
             </div>
@@ -47,25 +50,23 @@ function ProfileSelectors(){
     return (
         <div className="flex w-full gap-3 flex-col md:flex-row">
 
-        <Select >
-            <SelectTrigger className="flex-1 bg-[#F7F8F9] rounded-md border-[#0171DE0D] ">
-                <SelectValue placeholder="Language"/>
+        <Select>
+            <SelectTrigger className="flex-1 bg-[#F7F8F9] rounded-md border-[#0171DE0D] text-[11px]">
+                <SelectValue placeholder="Language" className="text-[11px]" />
             </SelectTrigger>
-            <SelectContent>
-                <SelectItem value="en"> Eng</SelectItem>
-                <SelectItem value="uk"> Spanish</SelectItem>
+            <SelectContent className="text-[11px]">
+                <SelectItem value="en" className="text-[11px]">Eng</SelectItem>
+                <SelectItem value="uk" className="text-[11px]">Spanish</SelectItem>
             </SelectContent>
-
         </Select>
-        <Select >
-            <SelectTrigger className="flex-1 bg-[#F7F8F9]">
-                <SelectValue placeholder="Gender"/>
+        <Select>
+            <SelectTrigger className="flex-1 bg-[#F7F8F9] text-[11px]">
+                <SelectValue placeholder="Gender" className="text-[11px]" />
             </SelectTrigger>
-            <SelectContent>
-                <SelectItem value="en"> Male</SelectItem>
-                <SelectItem value="uk"> Female</SelectItem>
+            <SelectContent className="text-[11px]">
+                <SelectItem value="en" className="text-[11px]">Male</SelectItem>
+                <SelectItem value="uk" className="text-[11px]">Female</SelectItem>
             </SelectContent>
-
         </Select>
         </div>
     )
@@ -105,7 +106,7 @@ function SingleTimeSlot(){
             <Clock  className="size-2"/>
         </span>
         <p className="text-[10px] text-[#65758B]">9 Oct 2025</p>
-        <p className="text-xs font-bold text-black-primary">
+        <p className="text-xs font-semibold text-black-primary">
             19:00
         </p>
     </button>
@@ -122,8 +123,8 @@ function AvailableTimeSlot(){
        <p className="text-[#6C7C93] text-[10px]">
            Next Available
         </p>
-        <p className="text-[11.1px] font-bold text-black-primary ">
-            Today at 14:00
+        <p className="text-[11.1px] text-black-primary ">
+            Today at <span className="font-bold">14:00</span>
         </p>
 
     </button>

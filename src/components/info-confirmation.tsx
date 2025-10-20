@@ -3,11 +3,11 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 
 // Assuming SingleBookingItem is defined in the same file or imported
-function SingleBookingItem() {
+function SingleBookingItem({ label, value }: { label: string; value: string }) {
   return (
     <div className='flex items-center justify-between'>
-      <p className='text-[#6C7C93] text-xs'>First Name</p>
-      <p className='text-[14px] font-semibold text-black-primary'>9:15 AM</p>
+      <p className='text-[#6C7C93] text-xs'>{label}</p>
+      <p className='text-[14px] font-semibold text-black-primary'>{value}</p>
     </div>
   );
 }
@@ -45,7 +45,7 @@ function ConfirmationHeader() {
                 <h4 className='text-[#658D1B] text-xs font-semibold'>Adult</h4>
                 <div className='flex gap-2'>
                     <div className='bg-white h-[20px] w-[40px] rounded-sm flex items-center justify-center'>
-                        <p className='text-xs text-black'>$44</p>
+                        <p className='text-xs text-black'>$88</p>
                     </div>
                     <div className='bg-white h-[20px] w-[40px] rounded-sm flex items-center justify-center'>
                         <p className='text-xs text-black'>$44</p>
@@ -65,12 +65,14 @@ function BookingSummary() {
     <div className='bg-[#F7F8F9] p-5'>
       <h2 className='text-lg font-bold text-black-primary'>Booking Summary</h2>
       <div className='flex flex-col gap-y-3 mt-4'>
-        <SingleBookingItem />
-        <SingleBookingItem />
-        <SingleBookingItem />
-        <SingleBookingItem />
+        <SingleBookingItem label="First Name" value="9:15 AM" />
+        <SingleBookingItem label="Last Name" value="9 Oct 2025" />
+        <SingleBookingItem label="Gender" value="9:15 AM - 9:29 AM" />
+        <SingleBookingItem label="Ethnicity" value="Adult" />
+        <SingleBookingItem label="Patient Type" value="Adult" />
         <hr className='bg-[#6C7C93]' />
-        <SingleBookingItem />
+        <SingleBookingItem label="Appointment With" value="Galing Clinic" />
+        <SingleBookingItem label="Schedule Date & Time" value="20 Oct 2025 At 10:30AM" />
       </div>
     </div>
   );
